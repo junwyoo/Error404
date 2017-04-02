@@ -35,6 +35,7 @@
         .album {
             text-align: center;
             padding-top: 15px;
+            display: inline-block
         }
         .userimage{
             width: 350px;
@@ -84,11 +85,12 @@
         <img src="/images/miranda.jpg" class = "userimage" style="width: 350px;height: 350px;">
         <img src="/images/obama.jpg" class = "userimage" style="width: 350px;height: 350px;">
         <% @users.each do |us| %>
-        <a href="/post/postings/ <%= us.id %>"><img src="<%=us.avatar.url%>" class='userimage' ></a><br>
+        <a href="/post/postings/ <%= us.id %>"><img src="<%=us.avatar.url%>" class='userimage'></a>
         <%end%>
     </div>
 
 
-
+    <p>
     <center style="margin-top:20px;"><a href="/home/write" class='press'> Show Us How You Love </a> </center>
+    </p>
 </html>

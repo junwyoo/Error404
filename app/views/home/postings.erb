@@ -108,8 +108,18 @@
             <%=right_count %>
             <input type="hidden" name="to_id" value="<%=@user.id%>">
             <input type="submit" value="Right is better!">
-            
         </form>
+        <p style="text-align:center;"> VS </p>
+        <br>
+        <p style="text-align:center;">
+            <%if x <=20%>
+                Right is out of Left's League!
+            <%elsif x >=80%>
+                Left is out of Right's League!
+            <%elsif x >=40 && x<=60%>
+                About the same...
+            <%end%>
+        </p>
         <br>
         </font></div>
         

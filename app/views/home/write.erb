@@ -3,10 +3,8 @@
         .title-box {
             padding: 10px 15px 10px 15px;
         }
-        .writable {
-            width: 800px;
-            height: 640px;
-        }
+
+
     </style>
 </head>
 <body>
@@ -15,9 +13,11 @@
     
     <form action="/upload_image" method="POST" enctype="multipart/form-data">
         <div class="write title">
+            <p> Title </p>
             <%= text_field_tag :my_title %>
         </div>
         <div class="note editing-area">
+            <p> Tell us about your relationship </p>
             <%= text_area_tag :my_text %>
         </div>
         <input type="file" name="my_image"><br>
