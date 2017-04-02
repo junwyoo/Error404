@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Poppins" rel="stylesheet">
+        <style>
+        body{
+            margin: 0px;
+            border: 0px;
+        }
+        #navbar{
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            background: #fce6eb;
+            
+        }
+        .hall {
+            text-decoration: none;
+            padding-top: 150px;
+        }
+        .hihi {
+            font: arial;
+            float: center;
+            background-color: #fce6eb;
+            font-family: 'Dosis';
+            font-style: bold;
+        }
+        .bye {
+            font: arial;
+            background-color: #fce6eb;
+            float: center;
+            font-family: 'Poppins';
+        }
+        .w3-button {
+            background-color: #fce6eb;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <center>
+        <div id="navbar">
+            <div class="hihi">
+            <a href="/home/main" class="w3-bar-item w3-button w3-#fce6eb"><font size="7" color="FF7292"><b>Between</b></font></a>
+            </div>
+            <div class="bye">
+            <a href="/home/best" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Best</font></a>
+            <a href="/home/out_of_league" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Out of League</font></a>
+            <a href="/home/upload" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Story</font></a>
+            <a href="/home/board" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Upload</font></a>
+            </div>
+        </div>
+    </center>
+        
+        <div style="text-align:center">
+            <img src="/images/jay-z-and-beyonce.jpg">
+        </div>
+        <br>
+        <%left_count=0%>
+        <%right_count=0%>
+        <%@votes.each do |v|%>
+            <%if v.is_left == 1 %>
+                <%left_count= left_count +1%>
+            <%elsif v.is_left == 0%>
+                <%right_count= right_count +1%>
+            <%end%>
+        <%end%>
+        
+        <div class="progress">
+            <%if left_count + right_count ==0%>
+                <%x=50%>
+            <%else%>
+                <% x=left_count*100/(left_count+right_count)%>
+            <%end%>
+                
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=x%>%;">
+                <span class="sr-only"></span>
+            </div>
+            <script>
+            $('.progress-bar').css({
+            'background-image': 'none',
+            'background-color': '#ff7292'
+            });
+            </script>
+        </div>
+        
+       
+        <form style="float:left;"action="/vote_left" method="POST">
+            <input type="hidden" name=vote_id value=1>
+            <input type="submit">
+        </form>
+        <form style="float:right;" action="/vote_right" method="POST">
+            <input type="hidden" name=vote_id value=1>
+            <input type="submit">
+        </form>
+        <br>
+        
+        <div>
+        left: <%=left_count%> <br>
+        right: <%=right_count%>
+        </div>
+    </body>
+</html>

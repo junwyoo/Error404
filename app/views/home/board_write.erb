@@ -1,0 +1,16 @@
+<div class='writing-form'>
+
+    
+    <form action="/write-on-board" method="POST">
+        <div class="write title">
+            <%= text_field_tag :board_title %>
+        </div>
+        <div class="note editing-area">
+            <%= text_area_tag :board_content %>
+        </div>
+        <input type="submit">
+
+    </form>
+    
+    
+</div>

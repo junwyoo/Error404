@@ -1,0 +1,138 @@
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Poppins" rel="stylesheet"><style>
+
+        #navbar{
+            width: 100%;
+            height: 30%;
+            background: #fce6eb;
+            
+        }
+        .hall {
+            text-decoration: none;
+            padding-top: 150px;
+        }
+        .hihi {
+            font: arial;
+            float: center;
+            background-color: #fce6eb;
+            font-family: 'Dosis';
+            font-style: bold;
+        }
+        .bye {
+            font: arial;
+            background-color: #fce6eb;
+            float: center;
+            font-family: 'Poppins';
+        }
+        .w3-button {
+            background-color: #fce6eb;
+        }
+    </style>
+    </head>
+    <body>
+    <div class='writing result'>
+        <center>
+        <div id="navbar">
+            <div class="hihi">
+            <a href="/home/main" class="w3-bar-item w3-button w3-#fce6eb"><font size="7" color="FF7292"><b>Between</b></font></a>
+            </div>
+            <div class="bye">
+            <a href="/home/best" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Best</font></a>
+            <a href="/home/out_of_league" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Out of League</font></a>
+            <a href="/home/upload" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Story</font></a>
+            <a href="/home/board" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Diary</font></a>
+            </div>
+        </div>
+        </center>
+        
+        
+        <div style="text-align:center;">
+        <!--id: <%#= @user.id%><br>-->
+        <font size="8" color="#FF7292"><%= @user.my_title%></font><br>
+        <font size="6" color="#FFBEE4"><%= @user.my_text%></font><br>
+        
+        <img src="<%=  @user.avatar.url%>" class='userimage' style="width: 600px; height: 600px;"><br>
+        </div>
+        <!-- Bar Starts -->
+        <br>
+        <div>
+        <%left_count=0%>
+        <%right_count=0%>
+        <%@votes.each do |v|%>
+            <%if v.vote_id == @user.id%>
+                <%if v.is_left == 1 %>
+                    <%left_count= left_count +1%>
+                <%elsif v.is_left == 0%>
+                    <%right_count= right_count +1%>
+                <%end%>
+            <%end%>
+        <%end%>
+        
+        <div class="progress" style="margin:20px;">
+            <%if left_count + right_count ==0%>
+                <%x=50%>
+            <%else%>
+                <% x=left_count*100/(left_count+right_count)%>
+            <%end%>
+                
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=x%>%;">
+                <span class="sr-only"></span>
+            </div>
+            <script>
+            $('.progress-bar').css({
+            'background-image': 'none',
+            'background-color': '#ff7292'
+            });
+            </script>
+        </div>
+        
+        <!--Bar ends -->
+        
+        <div style="margin:20px;"><font size = "8">
+        <form style="float:left;"action="/vote_left" method="POST">
+            <input type="hidden" name="to_id" value="<%=@user.id%>">
+            <input type="submit" value="Left is better!">
+            <%= left_count%>
+        </form>
+        
+        <form style="float:right;" action="/vote_right" method="POST">
+            <%=right_count %>
+            <input type="hidden" name="to_id" value="<%=@user.id%>">
+            <input type="submit" value="Right is better!">
+            
+        </form>
+        <br>
+        </font></div>
+        
+<div style="margin:20px;" id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hackathon-between.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+             </div>
+             
+</body>                   

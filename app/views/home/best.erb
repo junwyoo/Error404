@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Poppins" rel="stylesheet">
+    
+    <style>
+        body{
+            margin: 0px;
+            border: 0px;
+        }
+        #navbar{
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            background: #fce6eb;
+            z-index: 10;
+            
+        }
+        .hall {
+            text-decoration: none;
+            padding-top: 155px;
+        }
+        .hihi {
+            font: arial;
+            float: center;
+            background-color: #fce6eb;
+            font-family: 'Dosis';
+            font-style: bold;
+        }
+        .bye {
+            font: arial;
+            background-color: #fce6eb;
+            float: center;
+            font-family: 'Poppins';
+        }
+        .w3-button {
+            background-color: #fce6eb;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+        }
+        
+        .center{
+            width: 500px;
+            height: 700px;
+            z-index: 5;
+            position: relative;
+            left: 33.5%;
+            top: -628px;
+            border-radius: 10%;
+            border-style: solid;
+            border-color: black;
+            border-width: thin;
+            padding: 10px;
+        }
+        
+        
+        .number-container{
+            position: relative; 
+            top: 160px;
+            width: 90%;
+            margin: auto;
+            height: 800px;
+            display: table;
+            overflow: hidden;
+
+        }
+        
+      
+        .number_left {
+            float: left; 
+            width: 50%;
+
+        }
+        
+        .number_left_top{
+            height: 50%;
+
+        }
+        
+        .lt{
+            height: 360px;
+            width: 360px;
+            position: relative;
+            top: 20px;
+            left: 5%;
+            border-radius: 10%;
+             border-style: solid;
+            border-color: black;
+            border-width: thin;
+            padding: 10px;
+        }
+        
+        
+        
+        .number_left_bottom {
+            height: 50%;
+        }
+        
+        .lb{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            top: 10px;
+            left: 100px;
+            border-radius: 10%;
+            border-style: solid;
+            border-color: black;
+            border-width: thin;
+            padding: 10px;
+        }
+        .number_right {
+            float: left;
+            width: 50%;
+        }
+        
+        .number_right_top{
+            height: 50%;
+        }
+        
+        .rt{ 
+            height: 360px;
+            width: 360px;
+            position: relative;
+            left: 42%;
+            top: 20px;
+            border-radius: 10%;
+            border-style: solid;
+            border-color: black;
+            border-width: thin;
+            padding: 10px;
+        }
+        
+        .rb{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            top: 10px;
+            left: 42%;
+            border-radius: 10%;
+             border-style: solid;
+            border-color: black;
+            border-width: thin;
+            padding: 10px;
+        }
+        
+        .number_right_bottom{
+            height: 50%;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <center>
+         <div id="navbar">
+            <div class="hihi">
+            <a href="/home/main" class="w3-bar-item w3-button w3-#fce6eb"><font size="7" color="FF7292"><b>Between</b></font></a>
+            </div>
+            <div class="bye">
+            <a href="/home/best" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Best</font></a>
+            <a href="/home/out_of_league" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Out of League</font></a>
+            <a href="/home/upload" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Story</font></a>
+            <a href="/home/board" class="w3-bar-item w3-button w3-#fce6eb"><font size="6">Diary</font></a>
+            </div>
+        </div>
+   </center>
+        
+        <div class="number-container" style="display: flex; flex-wrap: wrap;">
+            
+            <div class="number_left">
+                <div class="number_left_top">
+                    <img class="lt" src="/images/miranda.jpg">
+                    </div>
+                <div class="number_left_bottom">
+                    <img class="lb" src="/images/alg-baena-schwa.jpg">
+                    </div>
+            </div>
+            <div class="number_right">
+                <div class="number_right_top">
+                    <img class="rt" src="/images/jay-z-and-beyonce.jpg">
+                    </div>
+                <div class="number_right_bottom">
+                    <img class="rb" src="/images/donald-trump-melania.jpg">
+                    </div>
+            </div>
+        
+        </div>
+        <img class="center" src="/images/obama.jpg">
+</body>
+</html>

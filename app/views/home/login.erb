@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+      <link href="assets/stylesheets/login.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Anton|Dosis|Poppins" rel="stylesheet">
+        <style>    
+        body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: fixed;
+        background-size: cover;
+        }
+        
+        
+        .login{
+            background-color: transparent;
+            text-align: center;
+            position: absolute;
+            left: 35%;
+            top: 30%;
+            border: 5px solid #ffffff;
+            padding: 70px 70px 90px 70px;
+            
+        }
+        h1 {
+            color: white;
+            font-family: "Dosis";
+            font-size: 85px;
+        }
+        p2{
+            color: white;
+            font-family: "Dosis";
+            font-size: 30px;
+            padding-top: 200px;
+        }
+        p3{
+            color: white;
+            font-family: "Dosis";
+            font-size: 40px;
+        }
+        .facebook {
+            background: #3b5998;
+            color: 'white';
+        }
+        .test {
+            padding-top: 50px;
+        }
+        a, a:hover, a:active, a:visited {
+               text-decoration: none;
+               color:white;
+        }
+        .face {
+            /*text-align: center;*/
+            /*position: absolute;*/
+            /*left: 45%;*/
+            /*top: 72%;*/
+            background: #3b5998;
+            color: white;
+            padding: 10px 0 10px 0;
+        }
+        
+        
+        .fbook {
+            color: white;
+            margin: 10px;
+        }
+      </style>
+</head>
+<body background = "/images/La Boum (1).jpg">
+    <div class="login">
+        <div class="between">
+        <h1>Between</h1>
+        </div>
+        <div class="test">
+            <p2>Love What Matters</p2><br><br><br>
+            
+        </div>
+        <div class="face">
+            <%= link_to "Sign in with Facebook", "/auth/facebook" =%>
+        </div>
+    </div>
+    <!--<div class="face">-->
+        
+    <!--</div>-->
+</body>
