@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get'home/write'
   get'home/board_write'
   get'home/index'
-  get'home/about'
   
   get'home/left'
   
